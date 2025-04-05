@@ -1,1 +1,33 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
 
+[project]
+name = "insightlog"
+version = "0.1.0"
+description = "Secure, redactable, context-aware logger for security and DevOps workflows."
+readme = "README.md"
+requires-python = ">=3.7"
+license = {text = "MIT"}
+authors = [
+  { name="kmukoo101" }
+]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+  "Intended Audience :: Developers",
+  "Topic :: Security",
+  "Topic :: Software Development :: Libraries :: Python Modules"
+]
+dependencies = [
+  "colorama>=0.4.6",
+  "PyYAML>=6.0",
+  "cryptography>=41.0.0"
+]
+
+[project.urls]
+Homepage = "https://github.com/kmukoo101/insightlog"
+Documentation = "https://github.com/kmukoo101/insightlog/wiki"
+Source = "https://github.com/kmukoo101/insightlog"
+Issues = "https://github.com/kmukoo101/insightlog/issues"
