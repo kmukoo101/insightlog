@@ -30,6 +30,25 @@ jobs:
         run: |
           python setup.py sdist bdist_wheel
 
+      - name: Set up .pypirc for GitHub Packages
+        run: |
+          mkdir -p ~/.config/pypoetry
+          echo "[distutils]" > ~/.pypirc
+          echo "index-servers =" >> ~/.pypirc
+          echo "    pypi" >> ~/.pypirc
+          echo "    github" >> ~/.pypirc
+          echo "" >> ~/.pypirc
+          echo "[pypi]" >> ~/.pypirc
+          echo "repository: https://upload.pypi.org/legacy/" >> ~/.pypirc
+          echo "username: __token__" >> ~/.pypirc
+          echo "password: ${{ secrets.PYPI_API_TOKEN }}" >> ~/.pypirc
+          echo "" >> ~/.pypirc
+          echo "[github]" >> ~/.pypirc
+          echo "repository: https://upload.pypi.org/legacy/" >> ~/.pypirc
+          echo "username: ${{ github.actor }}" >> ~/.pypirc
+          echo "password: ${{ secrets.GITHUB_TOKEN }}" >> ~/.pypirc
+
+
       - name: Publish to PyPI
         env:
           TWINE_USERNAME: __token__
