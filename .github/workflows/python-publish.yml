@@ -22,7 +22,9 @@ jobs:
           python -m pip install --upgrade pip setuptools wheel
 
       - name: Clean build artifacts
-          run: rm -rf build dist *.egg-info
+        run: |
+          rm -rf build dist *.egg-info
+
 
       - name: Build Package
         run: |
