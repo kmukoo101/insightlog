@@ -1,4 +1,4 @@
-# InsightLog
+# InsightLog (InsightLog101)
 
 This is a secure, context-aware Python logging utility that provides advanced features for redacting sensitive data, exporting logs to encrypted formats, filtering by severity and tags, and generating tamper-evident audit trails.
 
