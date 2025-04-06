@@ -21,6 +21,9 @@ jobs:
         run: |
           python -m pip install --upgrade pip setuptools wheel
 
+      - name: Clean build artifacts
+          run: rm -rf build dist *.egg-info
+
       - name: Build Package
         run: |
           python setup.py sdist bdist_wheel
@@ -40,5 +43,3 @@ jobs:
         run: |
           twine upload --repository-url https://upload.github.com/kmukoo101/insightlog dist/*
 
-      - name: Clean build artifacts
-          run: rm -rf build dist *.egg-info
