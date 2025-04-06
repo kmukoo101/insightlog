@@ -8,10 +8,12 @@ version = "0.1.9"
 description = "Secure, redactable, context-aware logger for security and DevOps workflows."
 readme = "README.md"
 requires-python = ">=3.7"
-license = {text = "MIT"}
+license = { text = "MIT" }
+
 authors = [
-  { name="kmukoo101" }
+  { name = "kmukoo101", email = "you@example.com" }
 ]
+
 classifiers = [
   "Programming Language :: Python :: 3",
   "License :: OSI Approved :: MIT License",
@@ -20,6 +22,7 @@ classifiers = [
   "Topic :: Security",
   "Topic :: Software Development :: Libraries :: Python Modules"
 ]
+
 dependencies = [
   "colorama>=0.4.6",
   "PyYAML>=6.0",
@@ -31,18 +34,7 @@ Homepage = "https://github.com/kmukoo101/insightlog"
 Documentation = "https://github.com/kmukoo101/insightlog/wiki"
 Source = "https://github.com/kmukoo101/insightlog"
 Issues = "https://github.com/kmukoo101/insightlog/issues"
+GitHub = "https://github.com/kmukoo101/insightlog101"
 
 [tool.setuptools.package-data]
 "*" = ["py.typed"]
-
-[project]
-name = "insightlog101"
-version = "0.1.8"
-# 👇 required for GitHub Packages
-authors = [{name = "your-name", email = "you@example.com"}]
-description = "..."
-readme = "README.md"
-license = {text = "MIT"}
-# 👇 required for GitHub Packages
-urls = { "GitHub" = "https://github.com/kmukoo101/insightlog101" }
-
