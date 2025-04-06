@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="insightlog101",
-    version="0.1.10",
+    version="0.1.11",
     author="kmukoo101",
     description="Secure, redactable, context-aware logger for security and DevOps workflows.",
     long_description=open("README.md", encoding="utf-8").read(),
