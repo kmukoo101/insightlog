@@ -19,7 +19,7 @@ This is a secure, context-aware Python logging utility that provides advanced fe
 ## Installation
 
 ```bash
-pip install git+https://github.com/kmukoo101/insightlog.git
+pip install git+https://github.com/kmukoo101/insightlog101.git
 ```
 
 Or clone the repo and use:
