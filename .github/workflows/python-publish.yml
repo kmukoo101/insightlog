@@ -39,5 +39,6 @@ jobs:
           TWINE_PASSWORD: ${{ secrets.GITHUB_TOKEN }}
         run: |
           twine upload \
-            --repository-url https://upload.pypi.org/legacy/ \
+            --repository-url https://upload.pypi.pkg.github.com/kmukoo101 \
             dist/*
+
