@@ -40,3 +40,5 @@ jobs:
         run: |
           twine upload --repository-url https://upload.github.com/kmukoo101/insightlog dist/*
 
+      - name: Clean build artifacts
+          run: rm -rf build dist *.egg-info
