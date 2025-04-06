@@ -19,67 +19,25 @@ jobs:
 
       - name: Install Build Tools
         run: |
-          python -m pip install --upgrade pip setuptools wheel
+          python -m pip install --upgrade pip setuptools wheel twine
 
       - name: Clean build artifacts
-        run: |
-          rm -rf build dist *.egg-info
-
+        run: rm -rf build dist *.egg-info
 
       - name: Build Package
-        run: |
-          python setup.py sdist bdist_wheel
-
-      - name: Set up .pypirc for GitHub Packages
-        run: |
-          mkdir -p ~/.config/pypoetry
-          echo "[distutils]" > ~/.pypirc
-          echo "index-servers =" >> ~/.pypirc
-          echo "    pypi" >> ~/.pypirc
-          echo "    github" >> ~/.pypirc
-          echo "" >> ~/.pypirc
-          echo "[pypi]" >> ~/.pypirc
-          echo "repository: https://upload.pypi.org/legacy/" >> ~/.pypirc
-          echo "username: __token__" >> ~/.pypirc
-          echo "password: ${{ secrets.PYPI_API_TOKEN }}" >> ~/.pypirc
-          echo "" >> ~/.pypirc
-          echo "[github]" >> ~/.pypirc
-          echo "repository: https://upload.pypi.org/legacy/" >> ~/.pypirc
-          echo "username: ${{ github.actor }}" >> ~/.pypirc
-          echo "password: ${{ secrets.GITHUB_TOKEN }}" >> ~/.pypirc
-
-
-      - name: Configure .pypirc for PyPI and GitHub Packages
-        run: |
-          echo "[distutils]" > ~/.pypirc
-          echo "index-servers =" >> ~/.pypirc
-          echo "    pypi" >> ~/.pypirc
-          echo "    github" >> ~/.pypirc
-      
-          echo "[pypi]" >> ~/.pypirc
-          echo "repository: https://upload.pypi.org/legacy/" >> ~/.pypirc
-          echo "username: __token__" >> ~/.pypirc
-          echo "password: ${{ secrets.PYPI_API_TOKEN }}" >> ~/.pypirc
-      
-          echo "[github]" >> ~/.pypirc
-          echo "repository: https://upload.pypi.org/legacy/" >> ~/.pypirc
-          echo "username: ${{ github.actor }}" >> ~/.pypirc
-          echo "password: ${{ secrets.GITHUB_TOKEN }}" >> ~/.pypirc
-
+        run: python setup.py sdist bdist_wheel
 
       - name: Publish to PyPI
         env:
           TWINE_USERNAME: __token__
           TWINE_PASSWORD: ${{ secrets.PYPI_API_TOKEN }}
-        run: |
-          python -m pip install twine
-          twine upload dist/*
+        run: twine upload dist/*
 
       - name: Publish to GitHub Packages
         env:
           TWINE_USERNAME: ${{ github.actor }}
           TWINE_PASSWORD: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          twine upload --repository-url https://upload.pypi.org/legacy/ dist/*
-
-
+          twine upload \
+            --repository-url https://upload.github.com/kmukoo101/insightlog101 \
+            dist/*
