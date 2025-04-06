@@ -38,4 +38,5 @@ jobs:
           TWINE_USERNAME: ${{ github.actor }}
           TWINE_PASSWORD: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          twine upload --repository-url https://upload.github.com/OWNER/REPO dist/*
+          twine upload --repository-url https://upload.github.com/kmukoo101/insightlog dist/*
+
