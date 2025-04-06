@@ -31,3 +31,18 @@ Homepage = "https://github.com/kmukoo101/insightlog"
 Documentation = "https://github.com/kmukoo101/insightlog/wiki"
 Source = "https://github.com/kmukoo101/insightlog"
 Issues = "https://github.com/kmukoo101/insightlog/issues"
+
+[tool.setuptools.package-data]
+"*" = ["py.typed"]
+
+[project]
+name = "insightlog101"
+version = "0.1.8"
+# 👇 required for GitHub Packages
+authors = [{name = "your-name", email = "you@example.com"}]
+description = "..."
+readme = "README.md"
+license = {text = "MIT"}
+# 👇 required for GitHub Packages
+urls = { "GitHub" = "https://github.com/kmukoo101/insightlog101" }
+
