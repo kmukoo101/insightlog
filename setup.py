@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(
-    name="insightlog",
+    name="insightlog101",
     version="0.1.0",
     author="kmukoo101",
     description="Secure, redactable, context-aware logger for security and DevOps workflows.",
