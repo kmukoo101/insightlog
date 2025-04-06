@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "insightlog101"
-version = "0.1.0"
+version = "0.1.2"
 description = "Secure, redactable, context-aware logger for security and DevOps workflows."
 readme = "README.md"
 requires-python = ">=3.7"
